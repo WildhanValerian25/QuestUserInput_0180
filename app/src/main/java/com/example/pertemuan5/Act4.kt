@@ -23,6 +23,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
 
@@ -43,7 +44,8 @@ fun FormDataDiri(modfier: Modifier) {
     Column(
         modifier = Modifier.padding(top = 50.dp),
         verticalArrangement = Arrangement.Top,
-        horizontalAlignment = Alignment.CenterHorizontally ){
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
         OutlinedTextField(
             value = textNama,
             singleLine = true,
@@ -71,23 +73,37 @@ fun FormDataDiri(modfier: Modifier) {
             singleLine = true,
             modifier = Modifier.width(250.dp),
             label = {
-                Text(text = "Alamat") },
+                Text(text = "Alamat")
+            },
             onValueChange = {
-                textAlamat = it }
+                textAlamat = it
+            }
         )
         HorizontalDivider(
             modifier = Modifier.padding(
                 bottom =
                     dimensionResource(R.dimen.padding_medium),
-                    top = dimensionResource(
+                top = dimensionResource(
                     id = R.dimen.padding_medium
-                    )
+                )
             ),
             thickness = dimensionResource(R.dimen.divider_tipis),
             color = Color.DarkGray
         )
-
-        )
+        Button(
+            modifier = Modifier.fillMaxWidth(1f),
+            // The button is enable when the user makes a selection
+            enabled = textAlamat.isNotEmpty(),
+            onClick = {
+                nama = textNama
+                alamat = textAlamat
+                jenis = textJK
+            }
+        ){
+            Text(stringResource(R.string.submit))
+        }
+}
+}
 
 
 
