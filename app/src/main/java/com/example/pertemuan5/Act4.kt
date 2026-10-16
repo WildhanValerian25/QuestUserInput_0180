@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.Button
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -99,23 +101,31 @@ fun FormDataDiri(modfier: Modifier) {
                 alamat = textAlamat
                 jenis = textJK
             }
-        ){
+        ) {
             Text(stringResource(R.string.submit))
         }
         HorizontalDivider(
             modifier = Modifier.padding(
                 bottom =
                     dimensionResource(R.dimen.padding_medium), top = dimensionResource(
-                        R.dimen.padding_medium)
+                    R.dimen.padding_medium
+                )
             ),
             thickness = dimensionResource(R.dimen.divider_tipis),
             color = Color.DarkGray
         )
-
-
-
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
+        ) {}
+    }
 }
-}
+
+
+
+
+
+
+
 
 
 
