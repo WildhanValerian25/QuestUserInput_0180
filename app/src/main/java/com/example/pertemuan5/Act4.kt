@@ -2,7 +2,9 @@ package com.example.pertemuan5
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -40,6 +42,19 @@ fun FormDataDiri(modfier: Modifier) {
             label = { Text(text = "Nama") },
             onValueChange = { textNama = it }
         )
+        Row{
+            gender.forEach { item ->
+                Row(modifier = Modifier.selectable(
+                    selected = textJK == item,
+                    onClick = {
+                        textJK = item
+                        jenis = item
+                    }
+                )
+                ) {
+                )
+
+        }
 
 
     }
