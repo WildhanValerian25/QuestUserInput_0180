@@ -47,9 +47,8 @@ fun FormDataDiri(modfier: Modifier) {
                 Row(modifier = Modifier.selectable(
                     selected = textJK == item,
                     onClick = {
-                        textJK = item
-                        jenis = item
-                    }
+                        textJK = item}
+
                 )
                 ) {
                 )
