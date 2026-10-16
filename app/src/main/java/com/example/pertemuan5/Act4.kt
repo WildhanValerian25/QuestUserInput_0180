@@ -71,6 +71,7 @@ fun FormDataDiri(
                         selected = textJK == item,
                         onClick = { textJK = item })
                 }
+                Text(text = item)
             }
         }
         OutlinedTextField(
